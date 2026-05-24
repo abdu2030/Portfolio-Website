@@ -91,7 +91,7 @@ export default function About() {
             {/* CTA */}
             <div className="mt-8">
               <a
-                href="/resume.pdf"
+                href="/ABDULKERIM_ADEM_FlowCV_Resume_2026-05-24.pdf"
                 target="_blank"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors"
               >
