@@ -76,6 +76,16 @@ export default function Projects() {
       category: 'Web',
       github: 'https://github.com/abdu2030/Laravel-project',
     },
+    {
+      id: 7,
+      title: 'Nova Crest Multimodal Tourist Kiosk',
+      description:
+        'An interactive, voice-activated smart tourist guide kiosk for the coastal city of Nova Crest. Integrates tactile controls with browser Speech Recognition/Synthesis and programmatic Web Audio API synthesis for immersive voice navigation and dynamic sound effects.',
+      image: '🏙️',
+      tags: ['React 19', 'TypeScript', 'Tailwind CSS', 'Web Speech API', 'Web Audio API'],
+      category: 'Web',
+      github: 'https://github.com/abdu2030/turist_guide',
+    },
   ];
 
   const filters = ['All', 'Mobile', 'Web'];
