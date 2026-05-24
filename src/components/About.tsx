@@ -61,8 +61,8 @@ export default function About() {
               A Passionate Developer Ready to Make an Impact
             </h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              I'm a dedicated developer with hands-on experience in mobile and backend development. My journey in tech has equipped me with skills in
-              mobile development using Flutter, backend development with Laravel
+              I'm a dedicated developer with hands-on experience in mobile and full stack development. My journey in tech has equipped me with skills in
+              mobile development using Flutter, full stack development with Laravel
               and Python, system programming with C++, and database management.
             </p>
             <p className="text-slate-600 mb-8 leading-relaxed">

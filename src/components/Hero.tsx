@@ -29,7 +29,7 @@ export default function Hero() {
               </span>
               <br />
               <span className="text-3xl md:text-4xl lg:text-5xl">
-                Mobile and Backend Developer
+                Mobile and Full Stack Developer
               </span>
             </h1>
 
