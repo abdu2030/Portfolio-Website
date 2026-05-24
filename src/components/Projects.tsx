@@ -84,7 +84,7 @@ export default function Projects() {
       image: '🏙️',
       tags: ['React 19', 'TypeScript', 'Tailwind CSS', 'Web Speech API', 'Web Audio API'],
       category: 'Web',
-      github: 'https://github.com/abdu2030/turist_guide',
+      github: 'https://tourist-guide-2vaxec7n7-abdu2030s-projects.vercel.app/',
     },
   ];
 
