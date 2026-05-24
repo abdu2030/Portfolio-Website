@@ -90,7 +90,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="mailto:your@email.com"
+                href="mailto:abdulkerimadem453@gmail.com"
                 className="p-3 bg-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all text-slate-600 hover:text-violet-600"
               >
                 <svg
