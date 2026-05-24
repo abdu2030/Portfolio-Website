@@ -21,6 +21,16 @@ export default function Skills() {
       ],
     },
     {
+      title: 'Frontend Development',
+      icon: '🌐',
+      color: 'from-pink-500 to-rose-500',
+      skills: [
+        { name: 'React', level: 80 },
+        { name: 'TypeScript', level: 75 },
+        { name: 'Tailwind CSS', level: 85 },
+      ],
+    },
+    {
       title: 'Programming Languages',
       icon: '💻',
       color: 'from-orange-500 to-red-500',
@@ -68,7 +78,7 @@ export default function Skills() {
         </div>
 
         {/* Skill Categories */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {skillCategories.map((category, index) => (
             <div
               key={index}
