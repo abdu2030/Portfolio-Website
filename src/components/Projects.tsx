@@ -17,6 +17,36 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      id: 10,
+      title: 'Skill Bridge AI Platform',
+      description:
+        'An AI-powered learning and career-growth platform focused on helping users identify skill gaps, follow guided learning paths, and connect their progress to practical opportunities. The project demonstrates modern SaaS-style product design with a strong emphasis on personalized development and clear user workflows.',
+      image: 'SB',
+      tags: ['AI Platform', 'React', 'Learning', 'Vercel'],
+      category: 'Web',
+      demo: 'https://skill-bridge-ai-platform-af28-5kt7iz9s6-abdu2030s-projects.vercel.app/',
+    },
+    {
+      id: 8,
+      title: 'Multi-Vendor E-Commerce Platform',
+      description:
+        'A full-stack marketplace experience for multi-seller commerce, designed around product discovery, vendor-driven listings, and a modern storefront flow. The project highlights scalable e-commerce UI patterns, catalog browsing, and the foundation for managing sellers, products, and customer purchasing journeys.',
+      image: 'MV',
+      tags: ['React', 'E-Commerce', 'Marketplace', 'Vercel'],
+      category: 'Web',
+      demo: 'https://multi-vendor-e-commerce-platform-we.vercel.app/',
+    },
+    {
+      id: 9,
+      title: 'Life OS',
+      description:
+        'A personal productivity and life-management web app built to help users organize goals, tasks, priorities, and daily progress in one focused workspace. The interface is structured for clarity, giving users a practical dashboard for planning, tracking, and staying consistent with important routines.',
+      image: 'LO',
+      tags: ['React', 'Productivity', 'Dashboard', 'Vercel'],
+      category: 'Web',
+      demo: 'https://life-os-two-red.vercel.app/',
+    },
+    {
       id: 1,
       title: 'Meals Recipe Explorer',
       description:
@@ -224,3 +254,4 @@ export default function Projects() {
     </section>
   );
 }
+
