@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 
 interface Project {
   id: number;
@@ -21,7 +21,7 @@ export default function Projects() {
       title: 'Meals Recipe Explorer',
       description:
         'A feature-rich mobile app for discovering and browsing meal recipes from around the world. Includes advanced filtering by country, dietary preferences like gluten-free, vegan, and lactose-free, making it effortless to find the perfect dish for any occasion.',
-      image: '🍲',
+      image: 'ME',
       tags: ['Flutter', 'Dart', 'Filters'],
       category: 'Mobile',
       github: 'https://github.com/abdu2030/fifth_flutter_app',
@@ -31,7 +31,7 @@ export default function Projects() {
       title: 'Tutor Connect Platform',
       description:
         'An ed-tech mobile platform bridging teachers and students. Educators can upload courses and learning materials while students browse and access both free and premium paid content, powered by seamless Chapa payment gateway integration.',
-      image: '🎓',
+      image: 'TC',
       tags: ['Flutter', 'Dart', 'Chapa API', 'Firebase'],
       category: 'Mobile',
       github: 'https://github.com/abdu2030/Flutter_Project_No_4',
@@ -40,10 +40,10 @@ export default function Projects() {
       id: 3,
       title: 'Secure Exam Monitor',
       description:
-        'A robust exam-taking application built with Java that enforces academic integrity through real-time tab-switch detection. If a student navigates away or opens another tab during the test, the exam is automatically dismissed — ensuring a fair and secure testing environment.',
-      image: '🛡️',
+        'A robust exam-taking application built with Java that enforces academic integrity through real-time tab-switch detection. If a student navigates away or opens another tab during the test, the exam is automatically dismissed, ensuring a fair and secure testing environment.',
+      image: 'SE',
       tags: ['Java', 'Security', 'Desktop'],
-      category: 'Mobile',
+      category: 'Desktop',
       github: 'https://github.com/abdu2030/SecureExamSystem',
     },
     {
@@ -51,7 +51,7 @@ export default function Projects() {
       title: 'Favorite Places',
       description:
         'A Flutter-based mobile app that lets users save and revisit their favorite locations. Leverages native device features including the camera to capture photos of memorable spots. Designed with map integration in mind for a future update to visualize saved places on an interactive map.',
-      image: '📍',
+      image: 'FP',
       tags: ['Flutter', 'Dart', 'Camera', 'Native Features'],
       category: 'Mobile',
       github: 'https://github.com/abdu2030/Seventh_flutter_app',
@@ -60,8 +60,8 @@ export default function Projects() {
       id: 5,
       title: 'EduSphere',
       description:
-        'A comprehensive e-learning web platform offering structured courses across a wide range of subjects. Students progress through lessons, take assessments and quizzes to validate their knowledge, and earn certificates upon successful course completion — creating a complete end-to-end learning experience.',
-      image: '🌐',
+        'A comprehensive e-learning web platform offering structured courses across a wide range of subjects. Students progress through lessons, take assessments and quizzes to validate their knowledge, and earn certificates upon successful course completion, creating a complete end-to-end learning experience.',
+      image: 'ED',
       tags: ['Laravel', 'PHP', 'MySQL', 'Blade'],
       category: 'Web',
       github: 'https://github.com/Group1mighty/IP2-PROJECT',
@@ -70,8 +70,8 @@ export default function Projects() {
       id: 6,
       title: 'Job Board',
       description:
-        'A full-featured job listing platform built with Laravel where job seekers can search and filter openings by category, location, and type. Employers can post their own job advertisements to find qualified candidates — serving as a two-sided marketplace connecting talent with opportunity.',
-      image: '💼',
+        'A full-featured job listing platform built with Laravel where job seekers can search and filter openings by category, location, and type. Employers can post their own job advertisements to find qualified candidates, serving as a two-sided marketplace connecting talent with opportunity.',
+      image: 'JB',
       tags: ['Laravel', 'PHP', 'MySQL', 'Filters'],
       category: 'Web',
       github: 'https://github.com/abdu2030/Laravel-project',
@@ -81,14 +81,14 @@ export default function Projects() {
       title: 'Nova Crest Multimodal Tourist Kiosk',
       description:
         'An interactive, voice-activated smart tourist guide kiosk for the coastal city of Nova Crest. Integrates tactile controls with browser Speech Recognition/Synthesis and programmatic Web Audio API synthesis for immersive voice navigation and dynamic sound effects.',
-      image: '🏙️',
+      image: 'NC',
       tags: ['React 19', 'TypeScript', 'Tailwind CSS', 'Web Speech API', 'Web Audio API'],
       category: 'Web',
-      github: 'https://tourist-guide-2vaxec7n7-abdu2030s-projects.vercel.app/',
+      demo: 'https://tourist-guide-2vaxec7n7-abdu2030s-projects.vercel.app/',
     },
   ];
 
-  const filters = ['All', 'Mobile', 'Web'];
+  const filters = ['All', 'Mobile', 'Web', 'Desktop'];
 
   const filteredProjects =
     activeFilter === 'All'
@@ -138,7 +138,9 @@ export default function Projects() {
             >
               {/* Project Image/Icon */}
               <div className="h-48 bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center group-hover:from-violet-200 group-hover:to-indigo-200 transition-colors">
-                <span className="text-7xl">{project.image}</span>
+                <span className="w-24 h-24 rounded-3xl bg-white/80 shadow-inner border border-white flex items-center justify-center text-3xl font-black text-violet-600">
+                  {project.image}
+                </span>
               </div>
 
               {/* Project Content */}

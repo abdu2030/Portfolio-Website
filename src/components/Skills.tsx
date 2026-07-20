@@ -1,8 +1,8 @@
-export default function Skills() {
+﻿export default function Skills() {
   const skillCategories = [
     {
       title: 'Mobile Development',
-      icon: '📱',
+      icon: 'MD',
       color: 'from-blue-500 to-cyan-500',
       skills: [
         { name: 'Flutter', level: 85 },
@@ -12,7 +12,7 @@ export default function Skills() {
     },
     {
       title: 'Backend Development',
-      icon: '⚙️',
+      icon: 'API',
       color: 'from-violet-500 to-purple-500',
       skills: [
         { name: 'Laravel', level: 75 },
@@ -22,7 +22,7 @@ export default function Skills() {
     },
     {
       title: 'Frontend Development',
-      icon: '🌐',
+      icon: 'FE',
       color: 'from-pink-500 to-rose-500',
       skills: [
         { name: 'React', level: 80 },
@@ -32,7 +32,7 @@ export default function Skills() {
     },
     {
       title: 'Programming Languages',
-      icon: '💻',
+      icon: 'PL',
       color: 'from-orange-500 to-red-500',
       skills: [
         { name: 'Python', level: 85 },
@@ -42,7 +42,7 @@ export default function Skills() {
     },
     {
       title: 'Database & Tools',
-      icon: '🗄️',
+      icon: 'DB',
       color: 'from-green-500 to-emerald-500',
       skills: [
         { name: 'MySQL', level: 80 },
@@ -53,12 +53,12 @@ export default function Skills() {
   ];
 
   const tools = [
-    { name: 'VS Code', icon: '💎' },
-    { name: 'Android Studio', icon: '🤖' },
-    { name: 'Postman', icon: '📮' },
-    { name: 'Git', icon: '🔀' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Figma', icon: '🎨' },
+    { name: 'VS Code', icon: 'VS' },
+    { name: 'Android Studio', icon: 'AS' },
+    { name: 'Postman', icon: 'PM' },
+    { name: 'Git', icon: 'GT' },
+    { name: 'Docker', icon: 'DK' },
+    { name: 'Figma', icon: 'FG' },
   ];
 
   return (
@@ -86,7 +86,7 @@ export default function Skills() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-2xl`}
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-sm font-bold text-white`}
                 >
                   {category.icon}
                 </div>
@@ -130,7 +130,9 @@ export default function Skills() {
                 key={index}
                 className="px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all flex items-center gap-2"
               >
-                <span className="text-xl">{tool.icon}</span>
+                <span className="w-8 h-8 rounded-full bg-slate-100 text-violet-600 text-xs font-bold flex items-center justify-center">
+                  {tool.icon}
+                </span>
                 <span className="font-medium text-slate-700">{tool.name}</span>
               </div>
             ))}

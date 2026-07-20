@@ -1,17 +1,17 @@
-export default function About() {
+﻿export default function About() {
   const highlights = [
     {
-      icon: '🎓',
+      icon: 'ED',
       title: 'Education',
       description: 'Software Engineering Student passionate about technology',
     },
     {
-      icon: '💼',
+      icon: 'EX',
       title: 'Experience',
       description: 'Building projects and solving real-world problems',
     },
     {
-      icon: '🌟',
+      icon: 'GO',
       title: 'Goal',
       description: 'Seeking internship to grow and contribute',
     },
@@ -30,22 +30,24 @@ export default function About() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Image/Illustration */}
+          {/* Left side - Illustration */}
           <div className="relative">
             <div className="aspect-square rounded-3xl bg-gradient-to-br from-violet-100 to-indigo-100 p-8 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-8xl mb-4">💻</div>
-                <div className="grid grid-cols-3 gap-4 mt-6">
+              <div className="text-center w-full">
+                <div className="mx-auto w-28 h-28 rounded-3xl bg-slate-900 text-white flex items-center justify-center text-4xl font-black shadow-xl">
+                  AA
+                </div>
+                <div className="grid grid-cols-3 gap-4 mt-8">
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <div className="text-3xl mb-2">📱</div>
+                    <div className="text-xl font-bold text-violet-600 mb-2">MD</div>
                     <div className="text-xs text-slate-600">Mobile</div>
                   </div>
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <div className="text-3xl mb-2">🌐</div>
+                    <div className="text-xl font-bold text-indigo-600 mb-2">WEB</div>
                     <div className="text-xs text-slate-600">Web</div>
                   </div>
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <div className="text-3xl mb-2">⚙️</div>
+                    <div className="text-xl font-bold text-slate-700 mb-2">API</div>
                     <div className="text-xs text-slate-600">Backend</div>
                   </div>
                 </div>
@@ -79,7 +81,9 @@ export default function About() {
                   key={index}
                   className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:bg-violet-50 transition-colors"
                 >
-                  <span className="text-3xl">{item.icon}</span>
+                  <span className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-sm font-bold text-violet-600 shrink-0">
+                    {item.icon}
+                  </span>
                   <div>
                     <h4 className="font-semibold text-slate-900">{item.title}</h4>
                     <p className="text-slate-600 text-sm">{item.description}</p>

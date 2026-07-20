@@ -1,4 +1,4 @@
-export default function Hero() {
+﻿export default function Hero() {
   return (
     <section
       id="home"
@@ -70,9 +70,10 @@ export default function Hero() {
             {/* Social Links */}
             <div className="flex gap-4 mt-8 justify-center lg:justify-start">
               <a
-                href="https://github.com"
+                href="https://github.com/abdu2030"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 className="p-3 bg-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all text-slate-600 hover:text-violet-600"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -80,17 +81,8 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all text-slate-600 hover:text-violet-600"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-              <a
                 href="mailto:abdulkerimadem453@gmail.com"
+                aria-label="Email Abdulkerim Adem"
                 className="p-3 bg-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all text-slate-600 hover:text-violet-600"
               >
                 <svg
@@ -110,22 +102,29 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Profile Image Placeholder */}
+          {/* Branded developer visual */}
           <div className="flex-1 flex justify-center">
-            <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-violet-400 to-indigo-600 p-1">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center">
-                  <span className="text-6xl md:text-8xl">👨‍💻</span>
+            <div className="relative w-72 h-72 md:w-88 md:h-88">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-400 to-indigo-600 p-1 shadow-2xl shadow-violet-200">
+                <div className="w-full h-full rounded-full bg-white flex flex-col items-center justify-center text-center px-8">
+                  <span className="text-7xl md:text-8xl font-black bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                    AA
+                  </span>
+                  <span className="mt-3 text-sm uppercase tracking-[0.35em] text-slate-500">
+                    Developer
+                  </span>
                 </div>
               </div>
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 px-4 py-2 bg-white rounded-full shadow-lg flex items-center gap-2">
-                <span className="text-2xl">🎯</span>
+              <div className="absolute -top-4 -right-4 px-4 py-3 bg-white rounded-2xl shadow-lg border border-slate-100">
+                <span className="block text-xs uppercase tracking-widest text-slate-400">Mobile</span>
                 <span className="font-semibold text-slate-700">Flutter</span>
               </div>
-              <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-white rounded-full shadow-lg flex items-center gap-2">
-                <span className="text-2xl">🚀</span>
+              <div className="absolute -bottom-4 -left-4 px-4 py-3 bg-white rounded-2xl shadow-lg border border-slate-100">
+                <span className="block text-xs uppercase tracking-widest text-slate-400">Backend</span>
                 <span className="font-semibold text-slate-700">Laravel</span>
+              </div>
+              <div className="absolute top-1/2 -left-8 hidden md:block px-3 py-2 bg-slate-900 text-white rounded-xl shadow-lg text-sm font-mono">
+                {'<code />'}
               </div>
             </div>
           </div>

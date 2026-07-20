@@ -1,26 +1,26 @@
-# Abdulkerim Adem — Portfolio
+﻿# Abdulkerim Adem - Portfolio
 
 A modern, responsive developer portfolio built with React, TypeScript, Vite, and Tailwind CSS.
 
-## 🚀 Live Demo
+## Live Demo
 
-[View Live](https://your-vercel-url.vercel.app)
+Update this section with the deployed portfolio URL after publishing.
 
-## ✨ Features
+## Features
 
-- **Responsive Design** — Looks great on desktop, tablet, and mobile
-- **Smooth Animations** — Hover effects, gradient transitions, and micro-interactions
-- **Project Showcase** — Filterable project cards (Mobile / Web) with expandable descriptions
-- **Contact Form** — Reach out directly from the site
-- **Single-Page Layout** — Hero, About, Skills, Projects, and Contact sections
+- Responsive design for desktop, tablet, and mobile
+- Smooth hover effects, gradient transitions, and micro-interactions
+- Filterable project showcase for mobile, web, and desktop work
+- Contact form that opens a prepared email draft
+- Single-page layout with Hero, About, Skills, Projects, Contact, and Footer sections
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/) — Fast dev server & build tool
-- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
+- React + TypeScript
+- Vite for local development and production builds
+- Tailwind CSS for styling
 
-## 📦 Getting Started
+## Getting Started
 
 ```bash
 # 1. Clone the repo
@@ -37,23 +37,23 @@ npm run dev
 npm run build
 ```
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 src/
-├── components/
-│   ├── Hero.tsx        # Landing section
-│   ├── About.tsx       # About me
-│   ├── Skills.tsx      # Skills & proficiency bars
-│   ├── Projects.tsx    # Filterable project cards
-│   ├── Contact.tsx     # Contact form & info
-│   ├── Navbar.tsx      # Navigation bar
-│   └── Footer.tsx      # Footer with social links
-├── App.tsx
-├── main.tsx
-└── index.css
+|-- components/
+|   |-- Hero.tsx        # Landing section
+|   |-- About.tsx       # About me
+|   |-- Skills.tsx      # Skills and proficiency bars
+|   |-- Projects.tsx    # Filterable project cards
+|   |-- Contact.tsx     # Contact form and info
+|   |-- Navbar.tsx      # Navigation bar
+|   `-- Footer.tsx      # Footer with social links
+|-- App.tsx
+|-- main.tsx
+`-- index.css
 ```
 
-## 📄 License
+## License
 
 MIT
