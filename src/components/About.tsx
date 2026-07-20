@@ -20,10 +20,10 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24 bg-gradient-to-br from-white via-emerald-50 to-sky-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-violet-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
             About Me
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
@@ -34,29 +34,29 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Illustration */}
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-violet-100 to-indigo-100 p-8 flex items-center justify-center">
+            <div className="aspect-square rounded-3xl bg-gradient-to-br from-emerald-100 via-sky-100 to-rose-100 p-8 flex items-center justify-center">
               <div className="text-center w-full">
-                <div className="mx-auto w-28 h-28 rounded-3xl bg-slate-900 text-white flex items-center justify-center text-4xl font-black shadow-xl">
+                <div className="mx-auto w-28 h-28 rounded-3xl bg-gradient-to-br from-sky-600 via-violet-600 to-rose-500 text-white flex items-center justify-center text-4xl font-black shadow-xl">
                   AA
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <VisualIcon name="mobile" className="w-8 h-8 text-violet-600 mx-auto mb-2" />
+                    <VisualIcon name="mobile" className="w-8 h-8 text-sky-600 mx-auto mb-2" />
                     <div className="text-xs text-slate-600">Mobile</div>
                   </div>
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <VisualIcon name="frontend" className="w-8 h-8 text-indigo-600 mx-auto mb-2" />
+                    <VisualIcon name="frontend" className="w-8 h-8 text-rose-600 mx-auto mb-2" />
                     <div className="text-xs text-slate-600">Web</div>
                   </div>
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <VisualIcon name="server" className="w-8 h-8 text-slate-700 mx-auto mb-2" />
+                    <VisualIcon name="server" className="w-8 h-8 text-emerald-700 mx-auto mb-2" />
                     <div className="text-xs text-slate-600">Backend</div>
                   </div>
                 </div>
               </div>
             </div>
             {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-2xl -z-10"></div>
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-sky-500 via-violet-500 to-rose-500 rounded-2xl -z-10"></div>
           </div>
 
           {/* Right side - Content */}
@@ -81,9 +81,9 @@ export default function About() {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:bg-violet-50 transition-colors"
+                  className="flex items-start gap-4 p-4 bg-white/80 border border-slate-100 rounded-xl hover:bg-sky-50 transition-colors"
                 >
-                  <span className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-sm font-bold text-violet-600 shrink-0">
+                  <span className="w-12 h-12 rounded-xl bg-white border border-sky-100 flex items-center justify-center text-sm font-bold text-sky-600 bg-sky-50 shrink-0">
                     <VisualIcon name={item.icon} className="w-6 h-6" />
                   </span>
                   <div>
@@ -99,7 +99,7 @@ export default function About() {
               <a
                 href="/ABDULKERIM_ADEM_FlowCV_Resume_2026-05-24.pdf"
                 target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-sky-600 via-violet-600 to-rose-500 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -123,4 +123,5 @@ export default function About() {
     </section>
   );
 }
+
 

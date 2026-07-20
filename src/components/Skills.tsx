@@ -64,10 +64,10 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-br from-slate-50 to-violet-50">
+    <section id="skills" className="py-24 bg-gradient-to-br from-rose-50 via-white to-cyan-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-violet-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-rose-600 font-semibold text-sm uppercase tracking-wider">
             My Skills
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
@@ -84,7 +84,7 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg shadow-slate-200/50 hover:shadow-xl transition-shadow"
+              className="bg-white/90 rounded-2xl p-6 shadow-lg shadow-slate-200/50 ring-1 ring-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
@@ -132,7 +132,7 @@ export default function Skills() {
                 key={index}
                 className="px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all flex items-center gap-2"
               >
-                <span className="w-8 h-8 rounded-full bg-slate-100 text-violet-600 flex items-center justify-center">
+                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-50 to-rose-50 text-sky-700 flex items-center justify-center">
                   <VisualIcon name={tool.icon} className="w-5 h-5" />
                 </span>
                 <span className="font-medium text-slate-700">{tool.name}</span>
@@ -144,4 +144,5 @@ export default function Skills() {
     </section>
   );
 }
+
 

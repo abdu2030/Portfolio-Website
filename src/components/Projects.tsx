@@ -119,6 +119,84 @@ export default function Projects() {
     },
   ];
 
+  const projectAccents: Record<
+    number,
+    { background: string; color: string; soft: string; border: string; shadow: string }
+  > = {
+    10: {
+      background: 'linear-gradient(135deg, #dbeafe 0%, #f5d0fe 55%, #fef3c7 100%)',
+      color: '#7c3aed',
+      soft: '#f3e8ff',
+      border: '#d8b4fe',
+      shadow: '0 18px 45px rgba(124, 58, 237, 0.18)',
+    },
+    8: {
+      background: 'linear-gradient(135deg, #dcfce7 0%, #cffafe 55%, #ffedd5 100%)',
+      color: '#059669',
+      soft: '#dcfce7',
+      border: '#86efac',
+      shadow: '0 18px 45px rgba(5, 150, 105, 0.18)',
+    },
+    9: {
+      background: 'linear-gradient(135deg, #fee2e2 0%, #fef3c7 50%, #e0f2fe 100%)',
+      color: '#ea580c',
+      soft: '#ffedd5',
+      border: '#fdba74',
+      shadow: '0 18px 45px rgba(234, 88, 12, 0.16)',
+    },
+    1: {
+      background: 'linear-gradient(135deg, #ffedd5 0%, #fef9c3 55%, #dcfce7 100%)',
+      color: '#d97706',
+      soft: '#fef3c7',
+      border: '#facc15',
+      shadow: '0 18px 45px rgba(217, 119, 6, 0.16)',
+    },
+    2: {
+      background: 'linear-gradient(135deg, #e0f2fe 0%, #ede9fe 50%, #fce7f3 100%)',
+      color: '#2563eb',
+      soft: '#dbeafe',
+      border: '#93c5fd',
+      shadow: '0 18px 45px rgba(37, 99, 235, 0.16)',
+    },
+    3: {
+      background: 'linear-gradient(135deg, #e2e8f0 0%, #fee2e2 55%, #f8fafc 100%)',
+      color: '#dc2626',
+      soft: '#fee2e2',
+      border: '#fca5a5',
+      shadow: '0 18px 45px rgba(220, 38, 38, 0.16)',
+    },
+    4: {
+      background: 'linear-gradient(135deg, #ccfbf1 0%, #dbeafe 55%, #dcfce7 100%)',
+      color: '#0891b2',
+      soft: '#cffafe',
+      border: '#67e8f9',
+      shadow: '0 18px 45px rgba(8, 145, 178, 0.16)',
+    },
+    5: {
+      background: 'linear-gradient(135deg, #ede9fe 0%, #dbeafe 55%, #f0fdf4 100%)',
+      color: '#4f46e5',
+      soft: '#e0e7ff',
+      border: '#a5b4fc',
+      shadow: '0 18px 45px rgba(79, 70, 229, 0.16)',
+    },
+    6: {
+      background: 'linear-gradient(135deg, #fef3c7 0%, #e0f2fe 55%, #fae8ff 100%)',
+      color: '#ca8a04',
+      soft: '#fef9c3',
+      border: '#fde047',
+      shadow: '0 18px 45px rgba(202, 138, 4, 0.16)',
+    },
+    7: {
+      background: 'linear-gradient(135deg, #cffafe 0%, #e0e7ff 50%, #ffe4e6 100%)',
+      color: '#0e7490',
+      soft: '#ccfbf1',
+      border: '#5eead4',
+      shadow: '0 18px 45px rgba(14, 116, 144, 0.16)',
+    },
+  };
+
+  const getAccent = (projectId: number) => projectAccents[projectId] ?? projectAccents[10];
+
   const filters = ['All', 'Mobile', 'Web', 'Desktop'];
 
   const filteredProjects =
@@ -127,7 +205,7 @@ export default function Projects() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24 bg-gradient-to-br from-white via-sky-50 to-rose-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-violet-600 font-semibold text-sm uppercase tracking-wider">
@@ -149,7 +227,7 @@ export default function Projects() {
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-6 py-2 rounded-full font-medium transition-all ${activeFilter === filter
-                  ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-300'
+                  ? 'bg-gradient-to-r from-sky-600 via-violet-600 to-rose-500 text-white shadow-lg shadow-violet-300'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
             >
@@ -163,13 +241,24 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-violet-200 transition-all duration-300"
+              className="group bg-white rounded-2xl border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              style={{ borderColor: getAccent(project.id).border }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image/Icon */}
-              <div className="h-48 bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center group-hover:from-violet-200 group-hover:to-indigo-200 transition-colors">
-                <span className="w-24 h-24 rounded-3xl bg-white/80 shadow-inner border border-white flex items-center justify-center text-violet-600">
+              <div
+                className="h-48 flex items-center justify-center transition-colors"
+                style={{ background: getAccent(project.id).background }}
+              >
+                <span
+                  className="w-24 h-24 rounded-3xl bg-white/85 shadow-inner border flex items-center justify-center"
+                  style={{
+                    borderColor: getAccent(project.id).border,
+                    boxShadow: getAccent(project.id).shadow,
+                    color: getAccent(project.id).color,
+                  }}
+                >
                   <VisualIcon name={project.icon} className="w-14 h-14" />
                 </span>
               </div>
@@ -177,11 +266,17 @@ export default function Projects() {
               {/* Project Content */}
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-xs font-medium">
+                  <span
+                    className="px-3 py-1 rounded-full text-xs font-medium"
+                    style={{ backgroundColor: getAccent(project.id).soft, color: getAccent(project.id).color }}
+                  >
                     {project.category}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-violet-600 transition-colors">
+                <h3
+                  className="text-xl font-bold text-slate-900 mb-2 transition-colors"
+                  style={{ color: hoveredProject === project.id ? getAccent(project.id).color : undefined }}
+                >
                   {project.title}
                 </h3>
                 <p
@@ -255,5 +350,4 @@ export default function Projects() {
     </section>
   );
 }
-
 
