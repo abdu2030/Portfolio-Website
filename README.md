@@ -4,14 +4,15 @@ A modern, responsive developer portfolio built with React, TypeScript, Vite, and
 
 ## Live Demo
 
-Update this section with the deployed portfolio URL after publishing.
+[View Live Portfolio](https://portfolio-website-abdu2030s-projects.vercel.app/)
 
 ## Features
 
 - Responsive design for desktop, tablet, and mobile
 - Smooth hover effects, gradient transitions, and micro-interactions
 - Filterable project showcase for mobile, web, and desktop work
-- Contact form that opens a prepared email draft
+- Project showcase with real screenshots, separated demo/code links, and case-study details
+- Contact form that opens a prepared email draft and keeps a copy fallback
 - Single-page layout with Hero, About, Skills, Projects, Contact, and Footer sections
 
 ## Tech Stack

@@ -8,23 +8,31 @@ export default function Contact() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [draftOpened, setDraftOpened] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const messageBody = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+  const mailtoUri = `mailto:abdulkerimadem453@gmail.com?subject=${encodeURIComponent(
+    formData.subject || 'Portfolio Contact'
+  )}&body=${encodeURIComponent(messageBody)}`;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    const mailtoUri = `mailto:abdulkerimadem453@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    
+    setDraftOpened(false);
+
     window.location.href = mailtoUri;
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+
+    window.setTimeout(() => {
+      setIsSubmitting(false);
+      setDraftOpened(true);
+    }, 400);
+  };
+
+  const handleCopyMessage = async () => {
+    await navigator.clipboard.writeText(messageBody);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
   };
 
   const contactInfo = [
@@ -65,27 +73,18 @@ export default function Contact() {
     <section id="contact" className="py-24 bg-gradient-to-br from-slate-900 via-violet-950 to-slate-900">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-violet-400 font-semibold text-sm uppercase tracking-wider">
-            Get In Touch
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">
-            Let's Work Together
-          </h2>
+          <span className="text-violet-400 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">Let's Work Together</h2>
           <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            I'm currently looking for internship and job opportunities. If you have
-            a position that matches my skills, I'd love to hear from you!
+            I'm currently looking for internship and job opportunities. If you have a position that matches my skills, I'd love to hear from you!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">
-              Contact Information
-            </h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
             <p className="text-slate-400 mb-8">
-              Feel free to reach out to me through any of these channels. I typically
-              respond within 24 hours.
+              Reach out through email or GitHub. The form opens a draft in your email app so you stay in control before sending.
             </p>
 
             <div className="space-y-6">
@@ -113,17 +112,13 @@ export default function Contact() {
                     {content}
                   </a>
                 ) : (
-                  <div
-                    key={index}
-                    className="flex items-center gap-4 p-4 bg-white/5 rounded-xl group"
-                  >
+                  <div key={index} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl group">
                     {content}
                   </div>
                 );
               })}
             </div>
 
-            {/* Social Links */}
             <div className="mt-10">
               <p className="text-slate-400 mb-4">Follow my work</p>
               <div className="flex gap-4">
@@ -151,115 +146,84 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8 shadow-2xl">
-            {submitted ? (
-              <div className="text-center py-12">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {draftOpened && (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                  Your email draft was opened. Please review it and press send in your email app.
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Email Draft Opened</h3>
-                <p className="text-slate-600 mb-6">Your email app should now contain the message draft.</p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="px-6 py-3 bg-violet-600 text-white rounded-full font-medium hover:bg-violet-700 transition-colors"
-                >
-                  Send Another Message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-slate-700 font-medium mb-2">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-slate-700 font-medium mb-2">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
+              )}
 
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-slate-700 font-medium mb-2">
-                    Subject
-                  </label>
+                  <label className="block text-slate-700 font-medium mb-2">Your Name</label>
                   <input
                     type="text"
                     required
-                    value={formData.subject}
-                    onChange={(e) =>
-                      setFormData({ ...formData, subject: e.target.value })
-                    }
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
-                    placeholder="Job Opportunity / Internship"
+                    placeholder="John Doe"
                   />
                 </div>
-
                 <div>
-                  <label className="block text-slate-700 font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
+                  <label className="block text-slate-700 font-medium mb-2">Your Email</label>
+                  <input
+                    type="email"
                     required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all resize-none"
-                    placeholder="Tell me about the opportunity..."
-                  ></textarea>
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
+                    placeholder="john@example.com"
+                  />
                 </div>
+              </div>
 
+              <div>
+                <label className="block text-slate-700 font-medium mb-2">Subject</label>
+                <input
+                  type="text"
+                  required
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
+                  placeholder="Job Opportunity / Internship"
+                />
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-medium mb-2">Message</label>
+                <textarea
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all resize-none"
+                  placeholder="Tell me about the opportunity..."
+                ></textarea>
+              </div>
+
+              <div className="grid sm:grid-cols-[1fr_auto] gap-3">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-violet-300 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-violet-300 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                      </svg>
-                      <span>Preparing...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Open Email Draft</span>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </>
-                  )}
+                  {isSubmitting ? 'Opening Draft...' : 'Open Email Draft'}
                 </button>
-              </form>
-            )}
+                <button
+                  type="button"
+                  onClick={handleCopyMessage}
+                  className="px-5 py-4 border border-slate-200 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-colors"
+                >
+                  {copied ? 'Copied' : 'Copy'}
+                </button>
+              </div>
+
+              <p className="text-xs text-slate-500">
+                This form uses your email app, so the message is only sent after you review and send the generated draft.
+              </p>
+            </form>
           </div>
         </div>
       </div>
