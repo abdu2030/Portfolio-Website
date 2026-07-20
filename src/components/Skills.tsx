@@ -1,8 +1,10 @@
-﻿export default function Skills() {
+﻿import VisualIcon, { type IconName } from './VisualIcon';
+
+export default function Skills() {
   const skillCategories = [
     {
       title: 'Mobile Development',
-      icon: 'MD',
+      icon: 'mobile' as IconName,
       color: 'from-blue-500 to-cyan-500',
       skills: [
         { name: 'Flutter', level: 85 },
@@ -12,7 +14,7 @@
     },
     {
       title: 'Backend Development',
-      icon: 'API',
+      icon: 'server' as IconName,
       color: 'from-violet-500 to-purple-500',
       skills: [
         { name: 'Laravel', level: 75 },
@@ -22,7 +24,7 @@
     },
     {
       title: 'Frontend Development',
-      icon: 'FE',
+      icon: 'frontend' as IconName,
       color: 'from-pink-500 to-rose-500',
       skills: [
         { name: 'React', level: 80 },
@@ -32,7 +34,7 @@
     },
     {
       title: 'Programming Languages',
-      icon: 'PL',
+      icon: 'code' as IconName,
       color: 'from-orange-500 to-red-500',
       skills: [
         { name: 'Python', level: 85 },
@@ -42,7 +44,7 @@
     },
     {
       title: 'Database & Tools',
-      icon: 'DB',
+      icon: 'database' as IconName,
       color: 'from-green-500 to-emerald-500',
       skills: [
         { name: 'MySQL', level: 80 },
@@ -53,12 +55,12 @@
   ];
 
   const tools = [
-    { name: 'VS Code', icon: 'VS' },
-    { name: 'Android Studio', icon: 'AS' },
-    { name: 'Postman', icon: 'PM' },
-    { name: 'Git', icon: 'GT' },
-    { name: 'Docker', icon: 'DK' },
-    { name: 'Figma', icon: 'FG' },
+    { name: 'VS Code', icon: 'vscode' as IconName },
+    { name: 'Android Studio', icon: 'android' as IconName },
+    { name: 'Postman', icon: 'postman' as IconName },
+    { name: 'Git', icon: 'git' as IconName },
+    { name: 'Docker', icon: 'docker' as IconName },
+    { name: 'Figma', icon: 'figma' as IconName },
   ];
 
   return (
@@ -86,9 +88,9 @@
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-sm font-bold text-white`}
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-white`}
                 >
-                  {category.icon}
+                  <VisualIcon name={category.icon} className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">
                   {category.title}
@@ -130,8 +132,8 @@
                 key={index}
                 className="px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all flex items-center gap-2"
               >
-                <span className="w-8 h-8 rounded-full bg-slate-100 text-violet-600 text-xs font-bold flex items-center justify-center">
-                  {tool.icon}
+                <span className="w-8 h-8 rounded-full bg-slate-100 text-violet-600 flex items-center justify-center">
+                  <VisualIcon name={tool.icon} className="w-5 h-5" />
                 </span>
                 <span className="font-medium text-slate-700">{tool.name}</span>
               </div>
@@ -142,3 +144,4 @@
     </section>
   );
 }
+

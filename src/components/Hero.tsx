@@ -1,4 +1,6 @@
-﻿export default function Hero() {
+﻿import VisualIcon from './VisualIcon';
+
+export default function Hero() {
   return (
     <section
       id="home"
@@ -115,13 +117,19 @@
                   </span>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 px-4 py-3 bg-white rounded-2xl shadow-lg border border-slate-100">
-                <span className="block text-xs uppercase tracking-widest text-slate-400">Mobile</span>
-                <span className="font-semibold text-slate-700">Flutter</span>
+              <div className="absolute -top-4 -right-4 px-4 py-3 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center gap-2">
+                <VisualIcon name="mobile" className="w-5 h-5 text-violet-600" />
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-slate-400">Mobile</span>
+                  <span className="font-semibold text-slate-700">Flutter</span>
+                </div>
               </div>
-              <div className="absolute -bottom-4 -left-4 px-4 py-3 bg-white rounded-2xl shadow-lg border border-slate-100">
-                <span className="block text-xs uppercase tracking-widest text-slate-400">Backend</span>
-                <span className="font-semibold text-slate-700">Laravel</span>
+              <div className="absolute -bottom-4 -left-4 px-4 py-3 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center gap-2">
+                <VisualIcon name="server" className="w-5 h-5 text-indigo-600" />
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-slate-400">Backend</span>
+                  <span className="font-semibold text-slate-700">Laravel</span>
+                </div>
               </div>
               <div className="absolute top-1/2 -left-8 hidden md:block px-3 py-2 bg-slate-900 text-white rounded-xl shadow-lg text-sm font-mono">
                 {'<code />'}
@@ -150,3 +158,5 @@
     </section>
   );
 }
+
+

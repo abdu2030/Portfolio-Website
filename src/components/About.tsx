@@ -1,17 +1,19 @@
-﻿export default function About() {
+﻿import VisualIcon, { type IconName } from './VisualIcon';
+
+export default function About() {
   const highlights = [
     {
-      icon: 'ED',
+      icon: 'education' as IconName,
       title: 'Education',
       description: 'Software Engineering Student passionate about technology',
     },
     {
-      icon: 'EX',
+      icon: 'experience' as IconName,
       title: 'Experience',
       description: 'Building projects and solving real-world problems',
     },
     {
-      icon: 'GO',
+      icon: 'goal' as IconName,
       title: 'Goal',
       description: 'Seeking internship to grow and contribute',
     },
@@ -39,15 +41,15 @@
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <div className="text-xl font-bold text-violet-600 mb-2">MD</div>
+                    <VisualIcon name="mobile" className="w-8 h-8 text-violet-600 mx-auto mb-2" />
                     <div className="text-xs text-slate-600">Mobile</div>
                   </div>
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <div className="text-xl font-bold text-indigo-600 mb-2">WEB</div>
+                    <VisualIcon name="frontend" className="w-8 h-8 text-indigo-600 mx-auto mb-2" />
                     <div className="text-xs text-slate-600">Web</div>
                   </div>
                   <div className="p-4 bg-white rounded-xl shadow-md">
-                    <div className="text-xl font-bold text-slate-700 mb-2">API</div>
+                    <VisualIcon name="server" className="w-8 h-8 text-slate-700 mx-auto mb-2" />
                     <div className="text-xs text-slate-600">Backend</div>
                   </div>
                 </div>
@@ -82,7 +84,7 @@
                   className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:bg-violet-50 transition-colors"
                 >
                   <span className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-sm font-bold text-violet-600 shrink-0">
-                    {item.icon}
+                    <VisualIcon name={item.icon} className="w-6 h-6" />
                   </span>
                   <div>
                     <h4 className="font-semibold text-slate-900">{item.title}</h4>
@@ -121,3 +123,4 @@
     </section>
   );
 }
+

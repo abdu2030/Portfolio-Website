@@ -1,10 +1,11 @@
 ﻿import { useState } from 'react';
+import VisualIcon, { type IconName } from './VisualIcon';
 
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  icon: IconName;
   tags: string[];
   category: string;
   github?: string;
@@ -21,7 +22,7 @@ export default function Projects() {
       title: 'Skill Bridge AI Platform',
       description:
         'An AI-powered learning and career-growth platform focused on helping users identify skill gaps, follow guided learning paths, and connect their progress to practical opportunities. The project demonstrates modern SaaS-style product design with a strong emphasis on personalized development and clear user workflows.',
-      image: 'SB',
+      icon: 'ai',
       tags: ['AI Platform', 'React', 'Learning', 'Vercel'],
       category: 'Web',
       demo: 'https://skill-bridge-ai-platform-af28-5kt7iz9s6-abdu2030s-projects.vercel.app/',
@@ -31,7 +32,7 @@ export default function Projects() {
       title: 'Multi-Vendor E-Commerce Platform',
       description:
         'A full-stack marketplace experience for multi-seller commerce, designed around product discovery, vendor-driven listings, and a modern storefront flow. The project highlights scalable e-commerce UI patterns, catalog browsing, and the foundation for managing sellers, products, and customer purchasing journeys.',
-      image: 'MV',
+      icon: 'store',
       tags: ['React', 'E-Commerce', 'Marketplace', 'Vercel'],
       category: 'Web',
       demo: 'https://multi-vendor-e-commerce-platform-we.vercel.app/',
@@ -41,7 +42,7 @@ export default function Projects() {
       title: 'Life OS',
       description:
         'A personal productivity and life-management web app built to help users organize goals, tasks, priorities, and daily progress in one focused workspace. The interface is structured for clarity, giving users a practical dashboard for planning, tracking, and staying consistent with important routines.',
-      image: 'LO',
+      icon: 'productivity',
       tags: ['React', 'Productivity', 'Dashboard', 'Vercel'],
       category: 'Web',
       demo: 'https://life-os-two-red.vercel.app/',
@@ -51,7 +52,7 @@ export default function Projects() {
       title: 'Meals Recipe Explorer',
       description:
         'A feature-rich mobile app for discovering and browsing meal recipes from around the world. Includes advanced filtering by country, dietary preferences like gluten-free, vegan, and lactose-free, making it effortless to find the perfect dish for any occasion.',
-      image: 'ME',
+      icon: 'recipe',
       tags: ['Flutter', 'Dart', 'Filters'],
       category: 'Mobile',
       github: 'https://github.com/abdu2030/fifth_flutter_app',
@@ -61,7 +62,7 @@ export default function Projects() {
       title: 'Tutor Connect Platform',
       description:
         'An ed-tech mobile platform bridging teachers and students. Educators can upload courses and learning materials while students browse and access both free and premium paid content, powered by seamless Chapa payment gateway integration.',
-      image: 'TC',
+      icon: 'education',
       tags: ['Flutter', 'Dart', 'Chapa API', 'Firebase'],
       category: 'Mobile',
       github: 'https://github.com/abdu2030/Flutter_Project_No_4',
@@ -71,7 +72,7 @@ export default function Projects() {
       title: 'Secure Exam Monitor',
       description:
         'A robust exam-taking application built with Java that enforces academic integrity through real-time tab-switch detection. If a student navigates away or opens another tab during the test, the exam is automatically dismissed, ensuring a fair and secure testing environment.',
-      image: 'SE',
+      icon: 'shield',
       tags: ['Java', 'Security', 'Desktop'],
       category: 'Desktop',
       github: 'https://github.com/abdu2030/SecureExamSystem',
@@ -81,7 +82,7 @@ export default function Projects() {
       title: 'Favorite Places',
       description:
         'A Flutter-based mobile app that lets users save and revisit their favorite locations. Leverages native device features including the camera to capture photos of memorable spots. Designed with map integration in mind for a future update to visualize saved places on an interactive map.',
-      image: 'FP',
+      icon: 'map',
       tags: ['Flutter', 'Dart', 'Camera', 'Native Features'],
       category: 'Mobile',
       github: 'https://github.com/abdu2030/Seventh_flutter_app',
@@ -91,7 +92,7 @@ export default function Projects() {
       title: 'EduSphere',
       description:
         'A comprehensive e-learning web platform offering structured courses across a wide range of subjects. Students progress through lessons, take assessments and quizzes to validate their knowledge, and earn certificates upon successful course completion, creating a complete end-to-end learning experience.',
-      image: 'ED',
+      icon: 'elearning',
       tags: ['Laravel', 'PHP', 'MySQL', 'Blade'],
       category: 'Web',
       github: 'https://github.com/Group1mighty/IP2-PROJECT',
@@ -101,7 +102,7 @@ export default function Projects() {
       title: 'Job Board',
       description:
         'A full-featured job listing platform built with Laravel where job seekers can search and filter openings by category, location, and type. Employers can post their own job advertisements to find qualified candidates, serving as a two-sided marketplace connecting talent with opportunity.',
-      image: 'JB',
+      icon: 'briefcase',
       tags: ['Laravel', 'PHP', 'MySQL', 'Filters'],
       category: 'Web',
       github: 'https://github.com/abdu2030/Laravel-project',
@@ -111,7 +112,7 @@ export default function Projects() {
       title: 'Nova Crest Multimodal Tourist Kiosk',
       description:
         'An interactive, voice-activated smart tourist guide kiosk for the coastal city of Nova Crest. Integrates tactile controls with browser Speech Recognition/Synthesis and programmatic Web Audio API synthesis for immersive voice navigation and dynamic sound effects.',
-      image: 'NC',
+      icon: 'kiosk',
       tags: ['React 19', 'TypeScript', 'Tailwind CSS', 'Web Speech API', 'Web Audio API'],
       category: 'Web',
       demo: 'https://tourist-guide-2vaxec7n7-abdu2030s-projects.vercel.app/',
@@ -168,8 +169,8 @@ export default function Projects() {
             >
               {/* Project Image/Icon */}
               <div className="h-48 bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center group-hover:from-violet-200 group-hover:to-indigo-200 transition-colors">
-                <span className="w-24 h-24 rounded-3xl bg-white/80 shadow-inner border border-white flex items-center justify-center text-3xl font-black text-violet-600">
-                  {project.image}
+                <span className="w-24 h-24 rounded-3xl bg-white/80 shadow-inner border border-white flex items-center justify-center text-violet-600">
+                  <VisualIcon name={project.icon} className="w-14 h-14" />
                 </span>
               </div>
 
@@ -254,4 +255,5 @@ export default function Projects() {
     </section>
   );
 }
+
 
