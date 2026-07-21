@@ -64,16 +64,16 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-[#0b0d14]">
+    <section id="skills" className="py-24 bg-slate-50 dark:bg-[#0b0d14]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-cyan-700 font-semibold dark:text-cyan-300 text-sm uppercase tracking-wider">
             My Skills
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-50 mt-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-950 dark:text-slate-50 mt-2">
             Technologies I Work With
           </h2>
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-slate-600 mt-4 dark:text-slate-400 max-w-2xl mx-auto">
             I've worked with a variety of technologies across mobile, web, and
             backend development. Here's an overview of my technical expertise.
           </p>
@@ -84,7 +84,7 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-[#151a26]/85 backdrop-blur-sm rounded-lg p-6 shadow-xl shadow-black/20 border border-white/10 hover:border-cyan-300/25 hover:shadow-cyan-950/25 hover:-translate-y-1 transition-all"
+              className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-xl shadow-slate-200/80 border border-slate-200 hover:border-cyan-300 hover:shadow-cyan-100 dark:bg-[#151a26]/85 dark:shadow-black/20 dark:border-white/10 dark:hover:border-cyan-300/25 dark:hover:shadow-cyan-950/25 hover:-translate-y-1 transition-all"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
@@ -92,7 +92,7 @@ export default function Skills() {
                 >
                   <VisualIcon name={category.icon} className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-100">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                   {category.title}
                 </h3>
               </div>
@@ -101,14 +101,14 @@ export default function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
                     <div className="flex justify-between mb-1">
-                      <span className="text-slate-300 font-medium">
+                      <span className="text-slate-700 font-medium dark:text-slate-300">
                         {skill.name}
                       </span>
-                      <span className="text-slate-500 text-sm">
+                      <span className="text-slate-500 text-sm dark:text-slate-500">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="h-1.5 bg-white/[0.07] rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-slate-200 dark:bg-white/[0.07] rounded-full overflow-hidden">
                       <div
                         className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000`}
                         style={{ width: `${skill.level}%` }}
@@ -123,19 +123,19 @@ export default function Skills() {
 
         {/* Tools */}
         <div className="text-center">
-          <h3 className="text-xl font-bold text-slate-100 mb-6">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Tools & Software
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {tools.map((tool, index) => (
               <div
                 key={index}
-                className="px-6 py-3 bg-[#151a26] border border-white/10 rounded-full shadow-lg shadow-black/20 hover:border-cyan-300/25 hover:shadow-cyan-950/25 hover:-translate-y-1 transition-all flex items-center gap-2"
+                className="px-6 py-3 bg-white border border-slate-200 rounded-full shadow-lg shadow-slate-200/80 hover:border-cyan-300 hover:shadow-cyan-100 dark:bg-[#151a26] dark:border-white/10 dark:shadow-black/20 dark:hover:border-cyan-300/25 dark:hover:shadow-cyan-950/25 hover:-translate-y-1 transition-all flex items-center gap-2"
               >
-                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400/10 to-violet-400/10 border border-white/10 text-cyan-300 flex items-center justify-center">
+                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-50 to-violet-50 border border-cyan-100 text-cyan-700 dark:from-cyan-400/10 dark:to-violet-400/10 dark:border-white/10 dark:text-cyan-300 flex items-center justify-center">
                   <VisualIcon name={tool.icon} className="w-5 h-5" />
                 </span>
-                <span className="font-medium text-slate-300">{tool.name}</span>
+                <span className="font-medium text-slate-700 dark:text-slate-300">{tool.name}</span>
               </div>
             ))}
           </div>
