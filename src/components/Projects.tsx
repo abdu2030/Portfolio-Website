@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import VisualIcon, { type IconName } from './VisualIcon';
 
 interface Project {
@@ -178,16 +178,16 @@ export default function Projects() {
   ];
 
   const projectAccents: Record<number, ProjectAccent> = {
-    10: { background: 'linear-gradient(135deg, #dbeafe 0%, #f5d0fe 55%, #fef3c7 100%)', color: '#7c3aed', soft: '#f3e8ff', border: '#d8b4fe', shadow: '0 18px 45px rgba(124, 58, 237, 0.18)' },
-    8: { background: 'linear-gradient(135deg, #dcfce7 0%, #cffafe 55%, #ffedd5 100%)', color: '#059669', soft: '#dcfce7', border: '#86efac', shadow: '0 18px 45px rgba(5, 150, 105, 0.18)' },
-    9: { background: 'linear-gradient(135deg, #fee2e2 0%, #fef3c7 50%, #e0f2fe 100%)', color: '#ea580c', soft: '#ffedd5', border: '#fdba74', shadow: '0 18px 45px rgba(234, 88, 12, 0.16)' },
-    1: { background: 'linear-gradient(135deg, #ffedd5 0%, #fef9c3 55%, #dcfce7 100%)', color: '#d97706', soft: '#fef3c7', border: '#facc15', shadow: '0 18px 45px rgba(217, 119, 6, 0.16)' },
-    2: { background: 'linear-gradient(135deg, #e0f2fe 0%, #ede9fe 50%, #fce7f3 100%)', color: '#2563eb', soft: '#dbeafe', border: '#93c5fd', shadow: '0 18px 45px rgba(37, 99, 235, 0.16)' },
-    3: { background: 'linear-gradient(135deg, #e2e8f0 0%, #fee2e2 55%, #f8fafc 100%)', color: '#dc2626', soft: '#fee2e2', border: '#fca5a5', shadow: '0 18px 45px rgba(220, 38, 38, 0.16)' },
-    4: { background: 'linear-gradient(135deg, #ccfbf1 0%, #dbeafe 55%, #dcfce7 100%)', color: '#0891b2', soft: '#cffafe', border: '#67e8f9', shadow: '0 18px 45px rgba(8, 145, 178, 0.16)' },
-    5: { background: 'linear-gradient(135deg, #ede9fe 0%, #dbeafe 55%, #f0fdf4 100%)', color: '#4f46e5', soft: '#e0e7ff', border: '#a5b4fc', shadow: '0 18px 45px rgba(79, 70, 229, 0.16)' },
-    6: { background: 'linear-gradient(135deg, #fef3c7 0%, #e0f2fe 55%, #fae8ff 100%)', color: '#ca8a04', soft: '#fef9c3', border: '#fde047', shadow: '0 18px 45px rgba(202, 138, 4, 0.16)' },
-    7: { background: 'linear-gradient(135deg, #cffafe 0%, #e0e7ff 50%, #ffe4e6 100%)', color: '#0e7490', soft: '#ccfbf1', border: '#5eead4', shadow: '0 18px 45px rgba(14, 116, 144, 0.16)' },
+    10: { background: 'linear-gradient(135deg, #111827 0%, #172554 55%, #271442 100%)', color: '#c4b5fd', soft: 'rgba(139, 92, 246, 0.10)', border: 'rgba(167, 139, 250, 0.22)', shadow: '0 18px 45px rgba(76, 29, 149, 0.24)' },
+    8: { background: 'linear-gradient(135deg, #0f1f1d 0%, #083344 55%, #172033 100%)', color: '#5eead4', soft: 'rgba(20, 184, 166, 0.10)', border: 'rgba(94, 234, 212, 0.20)', shadow: '0 18px 45px rgba(8, 145, 178, 0.20)' },
+    9: { background: 'linear-gradient(135deg, #111827 0%, #172554 50%, #301447 100%)', color: '#7dd3fc', soft: 'rgba(56, 189, 248, 0.10)', border: 'rgba(125, 211, 252, 0.20)', shadow: '0 18px 45px rgba(14, 116, 144, 0.22)' },
+    1: { background: 'linear-gradient(135deg, #172033 0%, #1e293b 55%, #0f2928 100%)', color: '#67e8f9', soft: 'rgba(34, 211, 238, 0.10)', border: 'rgba(103, 232, 249, 0.20)', shadow: '0 18px 45px rgba(8, 145, 178, 0.20)' },
+    2: { background: 'linear-gradient(135deg, #111827 0%, #172554 50%, #271442 100%)', color: '#93c5fd', soft: 'rgba(59, 130, 246, 0.10)', border: 'rgba(147, 197, 253, 0.20)', shadow: '0 18px 45px rgba(30, 64, 175, 0.22)' },
+    3: { background: 'linear-gradient(135deg, #171c28 0%, #20243a 55%, #251938 100%)', color: '#a5b4fc', soft: 'rgba(99, 102, 241, 0.10)', border: 'rgba(165, 180, 252, 0.20)', shadow: '0 18px 45px rgba(49, 46, 129, 0.22)' },
+    4: { background: 'linear-gradient(135deg, #0f1f26 0%, #0c2635 55%, #172033 100%)', color: '#67e8f9', soft: 'rgba(6, 182, 212, 0.10)', border: 'rgba(103, 232, 249, 0.20)', shadow: '0 18px 45px rgba(14, 116, 144, 0.22)' },
+    5: { background: 'linear-gradient(135deg, #15172b 0%, #172554 55%, #111827 100%)', color: '#a5b4fc', soft: 'rgba(99, 102, 241, 0.10)', border: 'rgba(165, 180, 252, 0.20)', shadow: '0 18px 45px rgba(55, 48, 163, 0.22)' },
+    6: { background: 'linear-gradient(135deg, #101d27 0%, #172554 55%, #20173a 100%)', color: '#7dd3fc', soft: 'rgba(56, 189, 248, 0.10)', border: 'rgba(125, 211, 252, 0.20)', shadow: '0 18px 45px rgba(14, 116, 144, 0.22)' },
+    7: { background: 'linear-gradient(135deg, #0f2026 0%, #172554 50%, #24153b 100%)', color: '#5eead4', soft: 'rgba(20, 184, 166, 0.10)', border: 'rgba(94, 234, 212, 0.20)', shadow: '0 18px 45px rgba(13, 148, 136, 0.22)' },
   };
 
   const getAccent = (projectId: number) => projectAccents[projectId] ?? projectAccents[10];
@@ -195,12 +195,12 @@ export default function Projects() {
   const filteredProjects = activeFilter === 'All' ? projects : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-br from-white via-sky-50 to-rose-50">
+    <section id="projects" className="py-24 bg-[#0f131d] border-y border-white/[0.04]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-violet-600 font-semibold text-sm uppercase tracking-wider">My Work</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Featured Projects</h2>
-          <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+          <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider">My Work</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-50 mt-2">Featured Projects</h2>
+          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
             Case-study style snapshots of projects I have built, with the problem, role, features, and stack for each one.
           </p>
         </div>
@@ -211,8 +211,8 @@ export default function Projects() {
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-6 py-2 rounded-full font-medium transition-all ${activeFilter === filter
-                ? 'bg-gradient-to-r from-sky-600 via-violet-600 to-rose-500 text-white shadow-lg shadow-violet-300'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-950/40'
+                : 'bg-[#151a26] border border-white/10 text-slate-400 hover:border-cyan-300/25 hover:bg-[#19202c] hover:text-slate-200'
               }`}
             >
               {filter}
@@ -228,7 +228,7 @@ export default function Projects() {
             return (
               <article
                 key={project.id}
-                className="group bg-white rounded-2xl border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className="group bg-[#151a26]/90 rounded-lg border overflow-hidden shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/35 transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 style={{ borderColor: accent.border }}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
@@ -239,11 +239,11 @@ export default function Projects() {
                       src={project.screenshot}
                       alt={project.screenshotAlt ?? `${project.title} screenshot`}
                       loading="lazy"
-                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
                     />
                   ) : (
                     <span
-                      className="w-24 h-24 rounded-3xl bg-white/85 shadow-inner border flex items-center justify-center"
+                      className="w-24 h-24 rounded-lg bg-[#151a26]/90 shadow-inner border flex items-center justify-center backdrop-blur-sm"
                       style={{ borderColor: accent.border, boxShadow: accent.shadow, color: accent.color }}
                     >
                       <VisualIcon name={project.icon} className="w-14 h-14" />
@@ -256,35 +256,35 @@ export default function Projects() {
                     <span className="px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: accent.soft, color: accent.color }}>
                       {project.category}
                     </span>
-                    {hasScreenshot && <span className="text-xs font-medium text-slate-400">Live screenshot</span>}
+                    {hasScreenshot && <span className="text-xs font-medium text-slate-500">Live screenshot</span>}
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 transition-colors" style={{ color: hoveredProject === project.id ? accent.color : undefined }}>
+                  <h3 className="text-xl font-bold text-slate-100 mb-2 transition-colors" style={{ color: hoveredProject === project.id ? accent.color : undefined }}>
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 text-sm mb-5">{project.description}</p>
+                  <p className="text-slate-400 text-sm mb-5 leading-relaxed">{project.description}</p>
 
                   <div className="space-y-4 text-sm flex-1">
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Problem</p>
-                      <p className="text-slate-700 leading-relaxed">{project.problem}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Problem</p>
+                      <p className="text-slate-300 leading-relaxed">{project.problem}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">My Role</p>
-                      <p className="text-slate-700 leading-relaxed">{project.role}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">My Role</p>
+                      <p className="text-slate-300 leading-relaxed">{project.role}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Key Features</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Key Features</p>
                       <div className="flex flex-wrap gap-2">
                         {project.features.map((feature) => (
-                          <span key={feature} className="px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-100 text-xs">
+                          <span key={feature} className="px-2.5 py-1 rounded-full bg-white/[0.04] text-slate-400 border border-white/[0.08] text-xs">
                             {feature}
                           </span>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Tech Stack</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Tech Stack</p>
                       <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech) => (
                           <span key={tech} className="px-2 py-1 rounded text-xs" style={{ backgroundColor: accent.soft, color: accent.color }}>
@@ -295,9 +295,9 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="flex gap-4 mt-6 pt-5 border-t border-slate-100">
+                  <div className="flex gap-4 mt-6 pt-5 border-t border-white/[0.08]">
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors text-sm font-semibold">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-cyan-300 transition-colors text-sm font-semibold">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                         </svg>

@@ -1,4 +1,4 @@
-﻿import VisualIcon, { type IconName } from './VisualIcon';
+import VisualIcon, { type IconName } from './VisualIcon';
 
 export default function About() {
   const highlights = [
@@ -20,13 +20,13 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-br from-white via-emerald-50 to-sky-50">
+    <section id="about" className="py-24 bg-[#0f131d] border-y border-white/[0.04]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider">
             About Me
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-50 mt-2">
             Get to Know Me Better
           </h2>
         </div>
@@ -34,42 +34,42 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Illustration */}
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-emerald-100 via-sky-100 to-rose-100 p-8 flex items-center justify-center">
+            <div className="aspect-square rounded-lg bg-gradient-to-br from-[#151a26] via-[#111827] to-[#11151f] border border-white/10 p-8 flex items-center justify-center shadow-2xl shadow-black/25">
               <div className="text-center w-full">
-                <div className="mx-auto w-28 h-28 rounded-3xl bg-gradient-to-br from-sky-600 via-violet-600 to-rose-500 text-white flex items-center justify-center text-4xl font-black shadow-xl">
+                <div className="mx-auto w-28 h-28 rounded-lg bg-gradient-to-br from-cyan-500 via-blue-600 to-violet-600 text-white flex items-center justify-center text-4xl font-black shadow-xl shadow-cyan-950/40">
                   AA
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-8">
-                  <div className="p-4 bg-white rounded-xl shadow-md">
-                    <VisualIcon name="mobile" className="w-8 h-8 text-sky-600 mx-auto mb-2" />
-                    <div className="text-xs text-slate-600">Mobile</div>
+                  <div className="p-4 bg-[#171c28] rounded-lg shadow-lg shadow-black/25 border border-white/10">
+                    <VisualIcon name="mobile" className="w-8 h-8 text-cyan-300 mx-auto mb-2" />
+                    <div className="text-xs text-slate-400">Mobile</div>
                   </div>
-                  <div className="p-4 bg-white rounded-xl shadow-md">
-                    <VisualIcon name="frontend" className="w-8 h-8 text-rose-600 mx-auto mb-2" />
-                    <div className="text-xs text-slate-600">Web</div>
+                  <div className="p-4 bg-[#171c28] rounded-lg shadow-lg shadow-black/25 border border-white/10">
+                    <VisualIcon name="frontend" className="w-8 h-8 text-violet-300 mx-auto mb-2" />
+                    <div className="text-xs text-slate-400">Web</div>
                   </div>
-                  <div className="p-4 bg-white rounded-xl shadow-md">
-                    <VisualIcon name="server" className="w-8 h-8 text-emerald-700 mx-auto mb-2" />
-                    <div className="text-xs text-slate-600">Backend</div>
+                  <div className="p-4 bg-[#171c28] rounded-lg shadow-lg shadow-black/25 border border-white/10">
+                    <VisualIcon name="server" className="w-8 h-8 text-blue-300 mx-auto mb-2" />
+                    <div className="text-xs text-slate-400">Backend</div>
                   </div>
                 </div>
               </div>
             </div>
             {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-sky-500 via-violet-500 to-rose-500 rounded-2xl -z-10"></div>
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-cyan-500/40 via-blue-600/40 to-violet-600/40 rounded-lg -z-10 blur-sm"></div>
           </div>
 
           {/* Right side - Content */}
           <div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+            <h3 className="text-2xl font-bold text-slate-50 mb-4">
               A Passionate Developer Ready to Make an Impact
             </h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
+            <p className="text-slate-400 mb-6 leading-relaxed">
               I'm a dedicated developer with hands-on experience in mobile and full stack development. My journey in tech has equipped me with skills in
               mobile development using Flutter, full stack development with Laravel
               and Python, system programming with C++, and database management.
             </p>
-            <p className="text-slate-600 mb-8 leading-relaxed">
+            <p className="text-slate-400 mb-8 leading-relaxed">
               I believe in writing clean, maintainable code and constantly
               learning new technologies. I'm excited to bring my skills to a
               dynamic team where I can contribute while continuing to grow as a
@@ -81,14 +81,14 @@ export default function About() {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 bg-white/80 border border-slate-100 rounded-xl hover:bg-sky-50 transition-colors"
+                  className="flex items-start gap-4 p-4 bg-[#151a26]/80 border border-white/10 rounded-lg hover:border-cyan-300/25 hover:bg-[#18202d] transition-all"
                 >
-                  <span className="w-12 h-12 rounded-xl bg-white border border-sky-100 flex items-center justify-center text-sm font-bold text-sky-600 bg-sky-50 shrink-0">
+                  <span className="w-12 h-12 rounded-lg bg-cyan-400/[0.08] border border-cyan-300/15 flex items-center justify-center text-sm font-bold text-cyan-300 shrink-0">
                     <VisualIcon name={item.icon} className="w-6 h-6" />
                   </span>
                   <div>
-                    <h4 className="font-semibold text-slate-900">{item.title}</h4>
-                    <p className="text-slate-600 text-sm">{item.description}</p>
+                    <h4 className="font-semibold text-slate-100">{item.title}</h4>
+                    <p className="text-slate-400 text-sm">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -99,7 +99,7 @@ export default function About() {
               <a
                 href="/ABDULKERIM_ADEM_FlowCV_Resume_2026-05-24.pdf"
                 target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-sky-600 via-violet-600 to-rose-500 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold shadow-lg shadow-cyan-950/40 hover:from-cyan-400 hover:to-blue-500 hover:shadow-cyan-500/20 active:translate-y-px transition-all"
               >
                 <svg
                   className="w-5 h-5"

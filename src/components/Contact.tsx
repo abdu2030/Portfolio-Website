@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -70,12 +70,12 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-slate-900 via-violet-950 to-slate-900">
+    <section id="contact" className="py-24 bg-[#0b0d14]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-violet-400 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+          <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">Let's Work Together</h2>
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed">
             I'm currently looking for internship and job opportunities. If you have a position that matches my skills, I'd love to hear from you!
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function Contact() {
               {contactInfo.map((info, index) => {
                 const content = (
                   <>
-                    <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-cyan-950/30 group-hover:scale-105 transition-transform">
                       {info.icon}
                     </div>
                     <div>
@@ -107,12 +107,12 @@ export default function Contact() {
                     href={info.link}
                     target={info.link.startsWith('http') ? '_blank' : undefined}
                     rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors group"
+                    className="flex items-center gap-4 p-4 bg-[#151a26]/70 border border-white/[0.08] rounded-lg hover:bg-[#19202c] hover:border-cyan-300/20 transition-all group"
                   >
                     {content}
                   </a>
                 ) : (
-                  <div key={index} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl group">
+                  <div key={index} className="flex items-center gap-4 p-4 bg-[#151a26]/70 border border-white/[0.08] rounded-lg group">
                     {content}
                   </div>
                 );
@@ -127,7 +127,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
-                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-violet-600 transition-colors"
+                  className="w-12 h-12 bg-[#151a26] border border-white/10 rounded-full flex items-center justify-center text-slate-300 hover:text-cyan-200 hover:bg-cyan-400/10 hover:border-cyan-300/30 transition-all"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -136,7 +136,7 @@ export default function Contact() {
                 <a
                   href="mailto:abdulkerimadem453@gmail.com"
                   aria-label="Email Abdulkerim Adem"
-                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-violet-600 transition-colors"
+                  className="w-12 h-12 bg-[#151a26] border border-white/10 rounded-full flex items-center justify-center text-slate-300 hover:text-cyan-200 hover:bg-cyan-400/10 hover:border-cyan-300/30 transition-all"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -146,59 +146,59 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-2xl">
+          <div className="bg-[#151a26]/90 backdrop-blur-sm rounded-lg p-8 border border-white/10 shadow-2xl shadow-black/30">
             <form onSubmit={handleSubmit} className="space-y-6">
               {draftOpened && (
-                <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                <div className="rounded-lg border border-amber-300/20 bg-amber-300/[0.08] px-4 py-3 text-sm text-amber-200">
                   Your email draft was opened. Please review it and press send in your email app.
                 </div>
               )}
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-slate-700 font-medium mb-2">Your Name</label>
+                  <label className="block text-slate-200 font-medium mb-2">Your Name</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-[#0f131d] border border-white/10 rounded-lg text-slate-100 placeholder:text-slate-600 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400/35 focus:border-cyan-300/50 transition-all"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label className="block text-slate-700 font-medium mb-2">Your Email</label>
+                  <label className="block text-slate-200 font-medium mb-2">Your Email</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-[#0f131d] border border-white/10 rounded-lg text-slate-100 placeholder:text-slate-600 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400/35 focus:border-cyan-300/50 transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-slate-700 font-medium mb-2">Subject</label>
+                <label className="block text-slate-200 font-medium mb-2">Subject</label>
                 <input
                   type="text"
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-[#0f131d] border border-white/10 rounded-lg text-slate-100 placeholder:text-slate-600 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400/35 focus:border-cyan-300/50 transition-all"
                   placeholder="Job Opportunity / Internship"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-700 font-medium mb-2">Message</label>
+                <label className="block text-slate-200 font-medium mb-2">Message</label>
                 <textarea
                   required
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 bg-[#0f131d] border border-white/10 rounded-lg text-slate-100 placeholder:text-slate-600 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400/35 focus:border-cyan-300/50 transition-all resize-none"
                   placeholder="Tell me about the opportunity..."
                 ></textarea>
               </div>
@@ -207,20 +207,20 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-violet-300 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold shadow-lg shadow-cyan-950/35 hover:from-cyan-400 hover:to-blue-500 hover:shadow-cyan-500/20 active:translate-y-px transition-all disabled:opacity-45 disabled:cursor-not-allowed disabled:shadow-none"
                 >
                   {isSubmitting ? 'Opening Draft...' : 'Open Email Draft'}
                 </button>
                 <button
                   type="button"
                   onClick={handleCopyMessage}
-                  className="px-5 py-4 border border-slate-200 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-colors"
+                  className="px-5 py-4 bg-white/[0.03] border border-white/10 text-slate-300 rounded-lg font-semibold hover:bg-white/[0.07] hover:border-cyan-300/25 hover:text-cyan-200 active:bg-white/10 transition-all"
                 >
                   {copied ? 'Copied' : 'Copy'}
                 </button>
               </div>
 
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 leading-relaxed">
                 This form uses your email app, so the message is only sent after you review and send the generated draft.
               </p>
             </form>
