@@ -58,7 +58,7 @@ export default function Projects() {
       role: 'Built the frontend marketplace experience and deployed the live demo.',
       category: 'Web',
       demo: 'https://multi-vendor-e-commerce-platform-we.vercel.app/',
-      screenshot: '/project-screenshots/multi-vendor-ecommerce.png',
+      screenshot: '/project-screenshots/multi-vendor-ecommerce.jpg',
       screenshotAlt: 'Multi-Vendor E-Commerce Platform homepage screenshot',
     },
     {
@@ -74,7 +74,7 @@ export default function Projects() {
       role: 'Created the dashboard interaction model, visual structure, and live deployment.',
       category: 'Web',
       demo: 'https://life-os-two-red.vercel.app/',
-      screenshot: '/project-screenshots/life-os.png',
+      screenshot: '/project-screenshots/life-os.jpg',
       screenshotAlt: 'Life OS productivity dashboard screenshot',
     },
     {
@@ -322,3 +322,4 @@ export default function Projects() {
     </section>
   );
 }
+
